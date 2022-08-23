@@ -7,18 +7,9 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"check-types": "tsc --noEmit",
+		"check-types": "tsc --pretty --noEmit",
 		"format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json}\"",
-		"prepare": "husky install",
-		"pre-commit": "lint-staged",
-		"test": "lint-staged"
-	},
-	"lint-staged": {
-		"./src/**/*.{js,jsx,ts,tsx}": [
-			"git add .",
-			"next lint",
-			"prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json}\""
-		]
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"next": "12.2.5",
