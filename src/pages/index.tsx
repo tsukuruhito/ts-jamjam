@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -13,8 +12,8 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Link href="/" passHref>
-			  	                          <a>home</a>
-			                        </Link>
+				<a>home</a>
+			</Link>
 		</div>
 	);
 };
