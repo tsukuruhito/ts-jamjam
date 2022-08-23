@@ -1,5 +1,4 @@
-#!/bin/sh
-."$(dirmname "$0")/_/husky.sh"
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-# yarn lint-stagedを実行
-npm run lint-staged
+npx lint-staged
