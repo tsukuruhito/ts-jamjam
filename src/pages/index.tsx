@@ -11,6 +11,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <a href="/">home</a>
+      <a href="/">home</a>
+      <a href="/">home</a>
+      <a href="/">home</a>
     </div>
   )
 }
