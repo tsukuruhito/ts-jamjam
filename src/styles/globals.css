@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.title {
+		@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-10 
+        block border-2 border-white py-4 px-2 sm:px-8 box-border backdrop-blur-sm
+        outline outline-white outline-offset-8 outline-8
+        w-4/5
+        md:w-3/5 md:py-16 md:max-w-4xl;
+	}
+	.title_text {
+		@apply text-6xl tracking-wider text-white leading-normal 
+        md:text-8xl md:leading-relaxed inline-block mx-auto;
+		font-family: noka, sans-serif;
+		font-weight: 600;
+		font-style: normal;
+	}
+}
+
+.mask-polygon {
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
