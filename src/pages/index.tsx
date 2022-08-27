@@ -23,10 +23,21 @@ const Home: NextPage<InferGetStaticPropsType<Props>> = ({ blogs, categories }: P
 			<Layout
 				title={""}
 				isHeader={false}
-				isFooter={false}
+				isFooter={true}
 				categories={categories}
 				isPadding={false}
+				pageId="home"
 			>
+				<div className="mb-8">
+					<h2 className="text-2xl mb-4">このサイトは</h2>
+					<p className="text-lg">
+						Next.jsとmicroCMSでJamstackなサイトを作ってみたいフロントエンドエンジニアがお試しで作ったサイトです。
+					</p>
+					<p className="text-lg">見ての通り、スタイルも適当な部分が多いです。</p>
+					<p className="text-lg">
+						端末によっては崩れが発生することもあるかもしれませんが、ご了承ください。
+					</p>
+				</div>
 				<h2 className="text-2xl mb-4">新着記事</h2>
 				<NewArticles blogs={blogs} />
 				<div className="text-right">

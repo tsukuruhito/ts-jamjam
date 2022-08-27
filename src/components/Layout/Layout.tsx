@@ -14,6 +14,7 @@ type Props = {
 	children: ReactNode;
 	categories: Categories[];
 	isPadding?: boolean;
+	pageId: string;
 };
 
 const Layout: FunctionComponent<Props> = ({
@@ -23,6 +24,7 @@ const Layout: FunctionComponent<Props> = ({
 	children,
 	categories,
 	isPadding,
+	pageId,
 }) => {
 	const [header] = useAtom(headerAtom);
 	return (
@@ -35,13 +37,11 @@ const Layout: FunctionComponent<Props> = ({
 			</Head>
 			{isHeader && <Header />}
 			<section
-				className={
-					isPadding
-						? `md:grid md:grid-cols-4 lg:grid-cols-5 pt-[${header}px]`
-						: `md:grid md:grid-cols-4 lg:grid-cols-5`
-				}
+				className="md:grid md:grid-cols-4 lg:grid-cols-5"
+				style={isPadding ? { paddingTop: header } : {}}
+				id={pageId}
 			>
-				<main className="p-4 bg-gray-200 md:col-span-3 lg:col-span-4">{children}</main>
+				<main className="p-8 box-border md:col-span-3 lg:col-span-4">{children}</main>
 				<Sidebar categories={categories} />
 			</section>
 			{isFooter && <Footer />}
