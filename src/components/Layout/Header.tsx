@@ -15,22 +15,22 @@ const Header = () => {
 	return (
 		<header
 			ref={ref}
-			className="fixed bg-white w-full z-30 flex justify-between items-center font-futura tracking-tight py-2 uppercase flex-row transition-all duration-500 ease-in-out"
+			className="fixed bg-slate-400 w-full z-30 flex justify-between items-center font-noka tracking-tight p-4 py-2  flex-row transition-all duration-500 ease-in-out"
 		>
-			<h1 className="cursor-pointer">
+			<span className="cursor-pointer">
 				<Link href="/" passHref>
-					<a className="flex items-center">
-						<span className="text-2xl font-semibold dark:text-white hidden md:block">ts port</span>
+					<a className="flex items-center p-2">
+						<span className="text-2xl font-semibold text-white">Gaget Tech Note</span>
 					</a>
 				</Link>
-			</h1>
-			<ul className="text-lg flex items-center">
+			</span>
+			{/* <ul className="text-lg flex items-center">
 				<li className="cursor-pointer">
 					<Link href="/" passHref>
 						<a className="inline-block m-2 p-2 defaultLink dark:text-white">top</a>
 					</Link>
 				</li>
-			</ul>
+			</ul> */}
 		</header>
 	);
 };

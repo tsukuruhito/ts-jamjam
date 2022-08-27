@@ -3,22 +3,67 @@
 @tailwind utilities;
 
 @layer components {
-	.title {
-		@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-10 
-        block border-2 border-white py-4 px-2 sm:px-8 box-border backdrop-blur-sm
-        outline outline-white outline-offset-8 outline-8
-        w-4/5
-        md:w-3/5 md:py-16 md:max-w-4xl;
-	}
-	.title_text {
-		@apply text-6xl tracking-wider text-white leading-normal 
-        md:text-8xl md:leading-relaxed inline-block mx-auto;
+    :root{
+        @apply text-gray-600
+    }
+    .font-noka{
 		font-family: noka, sans-serif;
 		font-weight: 600;
 		font-style: normal;
+    }
+	.title {
+		@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-10 
+        block border-2 border-white py-4 px-2 sm:px-8 box-border backdrop-blur-sm
+        outline outline-white outline-offset-8 outline-8 md:py-16 md:max-w-4xl;
 	}
+	.title_text {
+		@apply tracking-wider text-white leading-normal 
+        md:text-8xl md:leading-relaxed inline-block mx-auto font-noka;
+        font-size: clamp(3rem, 10vw, 6rem);
+	}
+    #blog_content #blog_head{
+        @apply  mb-4 pb-2 border-b-2 border-slate-400
+    }
+    #blog_content h1{
+        @apply text-3xl font-bold text-slate-600;
+    }
+    #blog_content h2{
+        @apply text-2xl font-bold leading-tight mb-4;
+    }
+    #blog_content h3{
+        @apply text-xl font-bold leading-tight mb-2;
+    }
+    #blog_content h4{
+        @apply text-lg font-bold leading-tight mb-2;
+    }
+    #blog_content h5{
+        @apply text-base font-bold leading-tight mb-2;
+    }
+    #blog_content p {
+        @apply text-base leading-relaxed mb-4;
+    }
+    #blog_content p:last-child {
+        @apply mb-0;
+    }
+    #blog_content table{
+        @apply table-fixed w-full max-w-3xl
+    }
+    #blog_content th, #blog_content td{
+        @apply text-base p-2 border-2 border-slate-200
+    }
+    #blog_content th{
+        @apply font-bold text-white bg-slate-400;
+    }
+    #home h2{
+        @apply text-2xl font-bold font-noka text-slate-600 flex items-center gap-4 w-full max-w-xs;
+        word-break: keep-all;
+    }
+    #home h2::after{
+        @apply bg-slate-400;
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+    }
 }
 
-.mask-polygon {
-	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-}

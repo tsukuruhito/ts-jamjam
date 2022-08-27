@@ -7,10 +7,10 @@ type Props = {
 };
 const Sidebar = ({ categories }: Props) => {
 	return (
-		<aside className="p-8 col-span-1">
-			<h3 className="text-2xl mb-4">プロフォール</h3>
-			<div className="pb-8 border-b-2 border-slate-400 mb-8">
-				<div className="px-4 mb-4">
+		<aside className="p-8 col-span-1 bg-gray-100 ">
+			<h3 className="text-2xl mb-4">プロフィール</h3>
+			<div className="pb-8 border-b-2 border-slate-400 mb-8 flex flex-wrap justify-center gap-4">
+				<div className="max-w-[150px] w-full">
 					<Image
 						src="/tsukuruhito.jpg"
 						alt="tsukuruhito"
@@ -18,10 +18,9 @@ const Sidebar = ({ categories }: Props) => {
 						height={50}
 						layout="responsive"
 						className="rounded-full"
-						priority
 					/>
 				</div>
-				<dl>
+				<dl className="justify-self-start">
 					<dt className="text-2xl">つく</dt>
 					<dd>フロントエンドエンジニア</dd>
 					<dd>ガジェットや生産性を高めてくれるものが好きです。</dd>
