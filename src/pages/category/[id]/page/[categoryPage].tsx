@@ -12,7 +12,7 @@ type Props = {
 	totalCount: number;
 	id: string;
 };
-const CategoryPageId = ({ blogs, categories, totalCount, id}: Props) => {
+const CategoryPageId = ({ blogs, categories, totalCount, id }: Props) => {
 	return (
 		<Layout
 			title={"記事一覧"}
@@ -58,7 +58,7 @@ const CategoryPageId = ({ blogs, categories, totalCount, id}: Props) => {
 					})}
 				</ul>
 			</div>
-			<Pagenation totalCount={totalCount} path={`/category/${id}/page/`}/>
+			<Pagenation totalCount={totalCount} path={`/category/${id}/page/`} />
 		</Layout>
 	);
 };
@@ -77,24 +77,26 @@ export const getStaticPaths = async () => {
 		const i = await client.get({
 			endpoint: `blogs`,
 			queries: { filters: `category[equals]${category.id}` },
-		})
+		});
 		const initPath = `/category/${category.id}/page/1`;
 		ary.push(initPath);
 
-		range(1, Math.ceil(i.totalCount / PER_PAGE)).map(page => `/category/${category.id}/page/${page}`).forEach(page => {
-			ary.push(page);
-		});
+		range(1, Math.ceil(i.totalCount / PER_PAGE))
+			.map((page) => `/category/${category.id}/page/${page}`)
+			.forEach((page) => {
+				ary.push(page);
+			});
 	});
 	await Promise.all(genPaths);
 
-	const paths =  ary.filter((ele, pos) => {
+	const paths = ary.filter((ele, pos) => {
 		return ary.indexOf(ele) === pos;
-	})
+	});
 
 	return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context: { params: { id: string, categoryPage: number } }) => {
+export const getStaticProps = async (context: { params: { id: string; categoryPage: number } }) => {
 	const id = context.params.id;
 	const page = context.params.categoryPage;
 

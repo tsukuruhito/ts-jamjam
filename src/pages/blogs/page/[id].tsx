@@ -57,7 +57,7 @@ const BlogPageId = ({ blogs, totalCount, categories }: Props) => {
 					})}
 				</ul>
 			</div>
-			<Pagenation totalCount={totalCount} path="/blogs/page/"/>
+			<Pagenation totalCount={totalCount} path="/blogs/page/" />
 		</Layout>
 	);
 };
