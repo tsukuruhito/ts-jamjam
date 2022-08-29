@@ -5,7 +5,7 @@ const Kv = () => {
 		<div className="relative w-full h-screen overflow-hidden">
 			<div className="title">
 				<h1 className="title_text">
-					Gadget <br /> Tech Note
+					Gadget <br /> Tech Blog
 				</h1>
 			</div>
 			<Image
