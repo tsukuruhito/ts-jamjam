@@ -29,13 +29,19 @@ const Document = () => {
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
 				<link rel="shortcut icon" href="/favicon.ico" />
-				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=optional" />
+				<link
+					rel="stylesheet"
+					href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=optional"
+				/>
 
 				<meta name="twitter:card" content="summary" />
 				<meta name="twitter:url" content="https://yourdomain.com" />
 				<meta name="twitter:title" content="PWA App" />
 				<meta name="twitter:description" content="Best PWA App in the world" />
-				<meta name="twitter:image" content="https://yourdomain.com/icons/android-chrome-192x192.png" />
+				<meta
+					name="twitter:image"
+					content="https://yourdomain.com/icons/android-chrome-192x192.png"
+				/>
 				<meta name="twitter:creator" content="@DavidWShadow" />
 				<meta property="og:type" content="website" />
 				<meta property="og:title" content="PWA App" />
@@ -44,7 +50,6 @@ const Document = () => {
 				<meta property="og:url" content="https://yourdomain.com" />
 				<meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" />
 
-
 				{/* <link rel='apple-touch-startup-image' href='/images/apple_splash_2048.png' sizes='2048x2732' />
 				<link rel='apple-touch-startup-image' href='/images/apple_splash_1668.png' sizes='1668x2224' />
 				<link rel='apple-touch-startup-image' href='/images/apple_splash_1536.png' sizes='1536x2048' />
@@ -52,7 +57,6 @@ const Document = () => {
 				<link rel='apple-touch-startup-image' href='/images/apple_splash_1242.png' sizes='1242x2208' />
 				<link rel='apple-touch-startup-image' href='/images/apple_splash_750.png' sizes='750x1334' />
 				<link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' /> */}
-
 			</Head>
 			<body>
 				<Main />
