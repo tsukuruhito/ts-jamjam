@@ -15,7 +15,7 @@ type Props = {
 const CategoryPageId = ({ blogs, categories, totalCount, id }: Props) => {
 	return (
 		<Layout
-			title={"記事一覧"}
+			title={"カテゴリ"}
 			isHeader={true}
 			isFooter={true}
 			categories={categories}
