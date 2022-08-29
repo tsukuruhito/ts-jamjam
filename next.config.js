@@ -4,15 +4,15 @@ const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
 
 module.exports = withPWA({
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-    runtimeCaching,
-  },
-  reactStrinctMode: true,
-  	swcMinify: true,
-  	images: {
+	pwa: {
+		dest: "public",
+		register: true,
+		skipWaiting: true,
+		runtimeCaching,
+	},
+	reactStrinctMode: true,
+	swcMinify: true,
+	images: {
 		domains: ["images.microcms-assets.io"],
 	},
 });
