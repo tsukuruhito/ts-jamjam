@@ -33,7 +33,7 @@ const Layout: FunctionComponent<Props> = ({
     "
 		>
 			<Head>
-				<title>{title !== "" ? `Gadget Tech Note | ${title}` : ""}</title>
+				<title>{title !== "" ? `Gadget Tech Note | ${title}` : "Gadget Tech Note"}</title>
 			</Head>
 			{isHeader && <Header />}
 			<section
