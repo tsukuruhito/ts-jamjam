@@ -41,7 +41,7 @@ const Home: NextPage<InferGetStaticPropsType<Props>> = ({ blogs, categories }: P
 				<h2 className="text-2xl mb-4">新着記事</h2>
 				<NewArticles blogs={blogs} />
 				<div className="text-right">
-					<Link href="/blogs" passHref>
+					<Link href="/blogs/page/1" passHref>
 						<a className='mt-4 inline-block ml-auto mr-0 text-lg after:content-[">"] after:ml-2 after:text-2xl'>
 							記事一覧
 						</a>

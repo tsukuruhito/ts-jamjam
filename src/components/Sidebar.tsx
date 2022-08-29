@@ -18,6 +18,7 @@ const Sidebar = ({ categories }: Props) => {
 						height={50}
 						layout="responsive"
 						className="rounded-full"
+						priority
 					/>
 				</div>
 				<dl className="justify-self-start">
@@ -32,7 +33,7 @@ const Sidebar = ({ categories }: Props) => {
 					{categories.map((category) => {
 						return (
 							<li key={category.id}>
-								<Link href={`/categories/${category.id}`} passHref>
+								<Link href={`/category/${category.id}/page/1`} passHref>
 									<a>{category.name}</a>
 								</Link>
 							</li>

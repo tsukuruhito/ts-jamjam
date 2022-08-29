@@ -13,7 +13,7 @@ type Props = {
 	isFooter: boolean;
 	children: ReactNode;
 	categories: Categories[];
-	isPadding?: boolean;
+	isPadding: boolean;
 	pageId: string;
 };
 
@@ -33,15 +33,15 @@ const Layout: FunctionComponent<Props> = ({
     "
 		>
 			<Head>
-				<title>{title}</title>
+				<title>{title !== "" ? `Gadget Tech Note | ${title}` : ""}</title>
 			</Head>
 			{isHeader && <Header />}
 			<section
-				className="md:grid md:grid-cols-4 lg:grid-cols-5"
+				className="md:grid md:grid-cols-4 lg:grid-cols-5 relative min-h-screen"
 				style={isPadding ? { paddingTop: header } : {}}
 				id={pageId}
 			>
-				<main className="p-8 box-border md:col-span-3 lg:col-span-4">{children}</main>
+				<main className="p-8 box-border md:col-span-3 lg:col-span-4 flex-col flex">{children}</main>
 				<Sidebar categories={categories} />
 			</section>
 			{isFooter && <Footer />}

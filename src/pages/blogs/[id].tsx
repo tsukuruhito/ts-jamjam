@@ -3,6 +3,7 @@ import { client } from "../../libs/client";
 import { Blog, Categories } from "../../types";
 import { GetStaticPaths, InferGetStaticPropsType, NextPage } from "next";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
+import { useRouter } from "next/router";
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
 	const data = await client.get({ endpoint: "blogs" });
@@ -30,6 +31,7 @@ type Props = {
 };
 const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (props: Props) => {
 	const { blog, categories } = props;
+	const router = useRouter();
 	const resultHTML = () => {
 		if (blog.table) {
 			let html = blog.content;
@@ -43,6 +45,10 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (props:
 		} else {
 			return blog.content;
 		}
+	};
+
+	const handlePageBack = () => {
+		router.back();
 	};
 
 	return (
@@ -74,6 +80,9 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (props:
 				</div>
 				<section dangerouslySetInnerHTML={{ __html: resultHTML() }} />
 			</article>
+			<button onClick={handlePageBack} className="btn ml-auto mt-auto">
+				前のページに戻る
+			</button>
 		</Layout>
 	);
 };
