@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
 		handleRouteChange(router.asPath);
-		router.events.on("routeChangeStart", handleRouteChange);
+		router.events.on("routeChangeComplete", handleRouteChange);
 	}, [handleRouteChange, router]);
 	return <Component {...pageProps} />;
 }
