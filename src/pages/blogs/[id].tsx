@@ -25,9 +25,8 @@ export const getStaticProps = async (context: {
 	return {
 		props: {
 			blog,
-			categories: category.contents,
-			revalidate: 60,
-		},
+			categories: category.contents
+		}
 	};
 };
 

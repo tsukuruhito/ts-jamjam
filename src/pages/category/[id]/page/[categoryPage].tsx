@@ -119,7 +119,6 @@ export const getStaticProps = async (context: { params: { id: string; categoryPa
 			totalCount: data.totalCount,
 			categories: categories.contents,
 			id: id,
-		},
-		revalidate: 60,
+		}
 	};
 };
