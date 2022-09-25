@@ -25,8 +25,8 @@ export const getStaticProps = async (context: {
 	return {
 		props: {
 			blog,
-			categories: category.contents
-		}
+			categories: category.contents,
+		},
 	};
 };
 
