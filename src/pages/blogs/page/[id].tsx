@@ -71,7 +71,7 @@ export const getStaticPaths = async () => {
 	const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map((repo) => {
 		return `/blogs/page/${repo}`;
 	});
-	return { paths, fallback: true };
+	return { paths, fallback: false};
 };
 
 export const getStaticProps = async (context: { params: { id: number } }) => {
@@ -94,6 +94,5 @@ export const getStaticProps = async (context: { params: { id: number } }) => {
 			totalCount: data.totalCount,
 			categories: categories.contents,
 		},
-		revalidate: 60,
 	};
 };
