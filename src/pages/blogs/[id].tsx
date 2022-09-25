@@ -12,9 +12,13 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 	return { paths, fallback: false };
 };
 
-export const getStaticProps = async (context: { params: { id: string } }) => {
+export const getStaticProps = async (context: {
+	params: { id: string };
+	previewData: { draftKey: string };
+}) => {
 	const id = context.params.id;
-	const blog: Blog = await client.get({ endpoint: "blogs", contentId: id });
+	const draftKey = context.previewData?.draftKey ? { draftKey: context.previewData.draftKey } : {};
+	const blog: Blog = await client.get({ endpoint: "blogs", contentId: id, queries: draftKey });
 	const category = await client.get({
 		endpoint: "categories",
 	});
@@ -25,10 +29,12 @@ export const getStaticProps = async (context: { params: { id: string } }) => {
 		},
 	};
 };
+
 type Props = {
 	blog: Blog;
 	categories: Categories[];
 };
+
 const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (props: Props) => {
 	const { blog, categories } = props;
 	const router = useRouter();
@@ -68,13 +74,13 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (props:
 							<span className="text-white bg-slate-400 py-0.5 px-1 rounded-sm text-xs mr-1">
 								公開日
 							</span>
-							{blog.publishedAt.substring(0, 10)}
+							{blog.publishedAt ? blog.publishedAt.substring(0, 10) : "xxxx-xx-xx"}
 						</li>
 						<li>
 							<span className="text-white bg-slate-400 py-0.5 px-1 rounded-sm text-xs mr-1">
 								更新日
 							</span>
-							{blog.updatedAt.substring(0, 10)}
+							{blog.updatedAt ? blog.updatedAt.substring(0, 10) : "更新日が入ります。"}
 						</li>
 					</ul>
 				</div>
@@ -86,4 +92,5 @@ const BlogId: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (props:
 		</Layout>
 	);
 };
+
 export default BlogId;

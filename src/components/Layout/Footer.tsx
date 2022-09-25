@@ -5,7 +5,7 @@ const Footer: FunctionComponent = () => {
 
 	return (
 		<>
-			<footer className="bg-slate-400 text-white text-center p-4 bg-base-300 text-base-content">
+			<footer className="bg-slate-500 text-white text-center p-4 bg-base-300 text-base-content">
 				<div>
 					<p>Copyright © {year} - All right reserved by Tsuku</p>
 				</div>

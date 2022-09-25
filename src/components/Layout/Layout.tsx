@@ -1,5 +1,6 @@
 import { headerAtom } from "../../Atom";
 import { Categories } from "../../types";
+import OffPreviewButton from "../OffPreviewButton";
 import Sidebar from "../Sidebar";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -35,6 +36,7 @@ const Layout: FunctionComponent<Props> = ({
 			<Head>
 				<title>{title !== "" ? `Gadget Tech Blog | ${title}` : "Gadget Tech Blog"}</title>
 			</Head>
+			<OffPreviewButton />
 			{isHeader && <Header />}
 			<section
 				className="md:grid md:grid-cols-4 lg:grid-cols-5 relative min-h-screen"

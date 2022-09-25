@@ -24,13 +24,6 @@ const Header = () => {
 					</a>
 				</Link>
 			</span>
-			{/* <ul className="text-lg flex items-center">
-				<li className="cursor-pointer">
-					<Link href="/" passHref>
-						<a className="inline-block m-2 p-2 defaultLink dark:text-white">top</a>
-					</Link>
-				</li>
-			</ul> */}
 		</header>
 	);
 };

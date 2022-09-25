@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 const NextConfig = {
-	reactStrinctMode: true,
 	swcMinify: true,
 	images: {
 		domains: ["images.microcms-assets.io"],

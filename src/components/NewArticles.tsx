@@ -22,10 +22,10 @@ const NewArticles = ({ blogs }: Props) => {
 											width={150}
 											height={80}
 											layout="responsive"
-											className="block rounded-t-xl w-full"
+											className="block rounded-t-xl w-full h-auto"
 											priority
 										/>
-										<span className="absolute top-1 left-1 text-white text-xs py-1 px-2 bg-stone-400 rounded-md">
+										<span className="absolute top-1 left-1 text-white text-xs py-1 px-2 bg-stone-600 rounded-md">
 											{blog.category.name}
 										</span>
 									</div>
