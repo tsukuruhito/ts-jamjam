@@ -120,5 +120,6 @@ export const getStaticProps = async (context: { params: { id: string; categoryPa
 			categories: categories.contents,
 			id: id,
 		},
+		revalidate: 60,
 	};
 };
