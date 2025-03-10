@@ -10,15 +10,15 @@ const NextConfig = {
 			{
 				source: "/:slug*",
 				destination: "/preview/:slug*",
-				has:[
+				has: [
 					{
 						type: "query",
 						key: "preview",
-					}
-				]
+					},
+				],
 			},
 		];
-	}
+	},
 };
 
 const withPWA = require("next-pwa")({
