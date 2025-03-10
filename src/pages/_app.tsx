@@ -8,8 +8,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	const handleRouteChange = useCallback(
 		(url: string) => {
-			if (router.isPreview && url.indexOf("?preview=true") <= -1) {
-				router.replace(`${url}?preview=true`);
+			if (router.isPreview && url.indexOf("?preview") <= -1) {
+				router.replace(`${url}?preview`,undefined,{shallow:true});
 			} else {
 				return false;
 			}
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
 		handleRouteChange(router.asPath);
-		router.events.on("routeChangeComplete", handleRouteChange);
+		router.events.on("hashChangeStart", handleRouteChange);
 	}, [handleRouteChange, router]);
 	return <Component {...pageProps} />;
 }
